@@ -15,15 +15,16 @@ galleryList.insertAdjacentHTML("beforeend", imageList);
 const link = document.querySelectorAll(".gallery__item");
 
 link.forEach(function (element) {
-  function modal(event) {
-    event.preventDefault();
-    var lightbox = new SimpleLightbox(".gallery a", {
-      captionsData: "alt",
-      captionPosition: "outside",
-      captionDelay: 250,
-    });
-  }
   element.addEventListener("click", modal);
 });
+
+function modal(event) {
+  event.preventDefault();
+  var lightbox = new SimpleLightbox(".gallery a", {
+    captionsData: "alt",
+    captionPosition: "outside",
+    captionDelay: 250,
+  });
+}
 
 console.log(galleryItems);
