@@ -18,13 +18,15 @@ link.forEach(function (element) {
   element.addEventListener("click", modal);
 });
 
+var lightbox = new SimpleLightbox(".gallery a", {
+  captionsData: "alt",
+  captionPosition: "outside",
+  captionDelay: 250,
+});
+
 function modal(event) {
   event.preventDefault();
-  var lightbox = new SimpleLightbox(".gallery a", {
-    captionsData: "alt",
-    captionPosition: "outside",
-    captionDelay: 250,
-  });
+  lightbox.on("show.simplelightbox");
 }
 
 console.log(galleryItems);
